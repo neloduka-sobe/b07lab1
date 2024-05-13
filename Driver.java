@@ -1,5 +1,7 @@
 public class Driver {
     public static void main(String [] args) {
+
+        // Given test
         Polynomial p = new Polynomial();
         System.out.println(p.evaluate(3));
 
