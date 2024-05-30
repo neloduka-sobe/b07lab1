@@ -1,21 +1,32 @@
+import java.io.File;
+
 public class Driver {
+  
     public static void main(String [] args) {
+      Polynomial p = new Polynomial();
 
-        // Given test
-        Polynomial p = new Polynomial();
-        System.out.println(p.evaluate(3));
+      double [] c1 = {4, 3, 45.1, 5.5};
+      int [] e1 = {5, 6, 4, 3};
+      Polynomial p1 = new Polynomial(c1, e1);
+      p1.printPolynomial();
 
-        double [] c1 = {6,0,0,5};
-        Polynomial p1 = new Polynomial(c1);
+      double [] c2 = {1, 1, -1, 0, 49};
+      int [] e2 = {1, 2, 5, 4, 9};
+      Polynomial p2 = new Polynomial(c2, e2);
+      p2.printPolynomial();
 
-        double [] c2 = {0,-2,0,0,-9};
-        Polynomial p2 = new Polynomial(c2);
-        Polynomial s = p1.add(p2);
-        System.out.println("s(0.1) = " + s.evaluate(0.1));
+      Polynomial p3 = new Polynomial(new File("test.txt"));
+      p3.printPolynomial();
 
-        if(s.hasRoot(1))
-            System.out.println("1 is a root of s");
-        else
-            System.out.println("1 is not a root of s");
+      Polynomial p1_p2 = p1.add(p2);
+      p1_p2.printPolynomial();
+
+
+      Polynomial p1p3 = p1.multiply(p3);
+      p1p3.printPolynomial();
+
+      p1p3.saveToFile("product.txt");
+
+      System.out.println(p1p3.evaluate(1));
     }
 }
