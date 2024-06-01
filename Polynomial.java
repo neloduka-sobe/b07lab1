@@ -167,7 +167,7 @@ public class Polynomial {
                     text = String.format("%s+%fx%d", text, coefficients[i], exponents[i]);
                 }
                 else {
-                    text = String.format("%s+%f", text, coefficients[i], exponents[i]);
+                    text = String.format("%s+%f", text, coefficients[i]);
                 }
             }
             else {
@@ -175,7 +175,7 @@ public class Polynomial {
                     text = String.format("%s%fx%d", text, coefficients[i], exponents[i]);
                 }
                 else {
-                    text = String.format("%s%f", text, coefficients[i], exponents[i]);
+                    text = String.format("%s%f", text, coefficients[i]);
                 }
             }
         }
